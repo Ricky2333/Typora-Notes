@@ -123,8 +123,175 @@ Process 1
 
 ### Pipe_Basics
 
+#### Pipe
+
 > 管道和普通fork来读写文件的最大区别是，管道再读完数据后，管道里的内容就没了，而普通的不会
 
+```c
+#include <fcntl.h>              
+#include <unistd.h>
+
+int pipe(int pipefd[2]);
+```
 
 
-## 实验作业
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <string.h>
+#define BUF_SIZE 1024
+
+int main(){
+        int fd[1],pid,n,i,status;
+        char buf[BUF_SIZE];
+        char *rd="message read from the pipe: ";
+        pipe(fd);
+
+        //puts(buf);
+        if( (pid = fork())< 0 ){
+                perror("fork failed\n");
+
+        }else if( pid == 0 ){     //now in child process, read message from the pipe
+                close(fd[1]);
+                while((n = read(fd[0],buf,BUF_SIZE)) > 0 ){
+                        write(STDOUT_FILENO,rd,strlen(rd));
+                        write(STDOUT_FILENO,buf,n);
+                }
+                close(fd[0]);
+                exit(0);
+        }else{                    //now in parent process, write message to the pipe
+                close(fd[0]);
+                while((n = read(STDIN_FILENO,buf,BUF_SIZE)) > 0){
+                        write(fd[1],buf,n);
+                }
+                close(fd[1]);
+
+        }
+        return 0;
+}
+```
+
+![image-20220604113944547](https://tva1.sinaimg.cn/large/e6c9d24ely1h2w27iig77j21f0092jt6.jpg)
+
+
+
+#### FIFO
+
+##### mkfifo.c
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#define BUF_SIZE 1024
+
+int main(){
+        int fd,n;
+        char buf[BUF_SIZE];
+
+        //make a fifo
+        if (mkfifo("fifo1",0666) < 0)
+                perror("mkfifo failed\n");
+
+        //open fifo
+        if ((fd = open("fifo1",O_WRONLY)) < 0 )
+                perror("read file failed\n");
+
+        //witre data to fifo
+        n = read(STDIN_FILENO,buf,BUF_SIZE);
+        write(fd,buf,n);
+
+        close(fd);
+        return 0;
+}
+```
+
+##### rdfifo.c
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <fcntl.h>
+#define BUF_SIZE 1024
+
+int main(){
+        int n,fd;
+        char buf[BUF_SIZE];
+
+        //open fifo
+        if ((fd = open("fifo1",O_RDONLY)) < 0)
+                perror("open fifo failed\n");
+
+        //read data to buf
+        if ((n = read(fd,buf,BUF_SIZE)) < 0)
+                perror("read file failed\n");
+
+        //write data to the screen
+        write(STDOUT_FILENO,buf,n);
+
+        close(fd);
+        return 0;
+}
+```
+
+Process1
+
+![image-20220604153330688](https://tva1.sinaimg.cn/large/e6c9d24ely1h2w8ypivb0j21de03yabv.jpg)
+
+Process2
+
+![image-20220604153729272](https://tva1.sinaimg.cn/large/e6c9d24ely1h2w92ud5jdj21ew06un0s.jpg)
+
+
+
+### Shared Memory
+
+```c
+#include <sys/ipc.h>
+#include <sys/shm.h>
+
+int shmget(key_t key, size_t size, int shmflg);
+```
+
+#### ipcs -m
+
+查看当前所有共享内存
+
+![image-20220604165048533](https://tva1.sinaimg.cn/large/e6c9d24ely1h2wb74x6qzj21bm0l2wkz.jpg)
+
+
+
+#### shmget()
+
+创建一块共享进程
+
+```c
+#include <sys/ipc.h>
+#include <sys/shm.h>
+
+int shmget(key_t key, size_t size, int shmflg);
+```
+
+
+
+#### shmat()
+
+允许进程访问一块共享进程，即连接一块共享内存
+
+```c
+#include <sys/types.h>
+#include <sys/shm.h>
+
+void *shmat(int shmid, const void *shmaddr, int shmflg);
+```
+
