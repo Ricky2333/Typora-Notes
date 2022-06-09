@@ -8,6 +8,36 @@ $$
 
 
 
+#### 3.4 pthread_cancel()
+
+##### pthread_cancel()功能
+
+>  **杀死一个线程**，类似于用 **`kill命令`** 杀死进程
+
+##### pthread_cancle()原型
+
+```C
+#include <pthread.h>
+
+int pthread_cancel(pthread_t thread);
+```
+
+##### pthread_cancel()返回值
+
+> 如果操作成功，**返回0**；如果操作失败，**返回错误值**
+
+##### pthread_cancel()参数解释
+
+>  **`pthread_t thread`**  表示想要杀死的子线程的ID
+
+##### pthread_cancel()编程实例
+
+```C
+pthread_cancel(tid1)  //杀死线程ID为tid1的线程
+```
+
+
+
 
 
 ```c

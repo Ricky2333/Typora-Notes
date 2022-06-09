@@ -388,7 +388,7 @@ rm -rf folder7  #删除整个folder7目录，无交互
 ##### rm -ri [folder]
 
 ```bash
-rm -ri folder2  #删除整个folder7目录，无交互
+rm -ri folder2  #删除整个folder7目录，有交互
 ```
 
 ![image-20220517152721342](https://tva1.sinaimg.cn/large/e6c9d24ely1h2bfmrens0j21300em78h.jpg)
