@@ -665,7 +665,7 @@ chmod g-r chmoddir
 touch octfile
 ```
 
-1. 用 ls -l 命令来确定 octfile 的权限，这些是文件的默认权限，用户、主属组和其他用户的权限是什么？
+2. 用 ls -l 命令来确定 octfile 的权限，这些是文件的默认权限，用户、主属组和其他用户的权限是什么？
 
 ![image-20220609224619546](https://tva1.sinaimg.cn/large/e6c9d24ely1h32dkkvcpcj20z603y759.jpg)
 

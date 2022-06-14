@@ -61,4 +61,3 @@
 
 > *I prefer to think of the distinction in this way: permissive licenses provide the maximum freedom to the immediate downstream developers (including the ability to use the open source code in a closed source project), whereas copyleft licenses provide the maximum freedom through to the end users.*
 
-## 
