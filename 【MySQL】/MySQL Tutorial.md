@@ -261,6 +261,7 @@ LIMIT 1;
 > + how to **check for a range of values** by using  **`BETWEEN AND`**
 > + how to **check for NULL values** by using  **`IS NULL`**
 > + how to **check for discrete values** by using  **`IN (Value1,Value2)`**
+> + how to **use SQL wildcards** within  **`WHERE`**  clauses by using  **`LIKE`**
 
 
 
@@ -319,6 +320,33 @@ where job IN ('Manager','Salesman');
 ```
 
 ![image-20220614190555972](https://tva1.sinaimg.cn/large/e6c9d24ely1h37zasy9mvj211i0pegr4.jpg)
+
+
+
+##### 5. Using wildcards Filtering
+
+**`WHERE [Field_name] LIKE 'string'`**
+
+| Sign |                       Meaning                        |     e.g      |
+| :--: | :--------------------------------------------------: | :----------: |
+|  %   | match **any number** of occurrences of any character |  LIKE '%M%'  |
+|  _   |          match just **a single character**           | LIKE 'Rick_' |
+
+```mysql
+select empno,ename,job,mgr,sal,comm
+from emp
+where job LIKE 'S%';
+```
+
+![image-20220615102119207](https://tva1.sinaimg.cn/large/e6c9d24ely1h38praqfubj211q0iqjv7.jpg)
+
+```
+select empno,ename,job,mgr,sal,comm
+from emp
+where ename LIKE 'Rick_';
+```
+
+![image-20220615102308231](https://tva1.sinaimg.cn/large/e6c9d24ely1h38pt5m0hbj20tc0c0q4p.jpg)
 
 
 

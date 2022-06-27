@@ -18,11 +18,11 @@ Linux 文件系统是**树状结构**，系统中每个分区都是一个文件�
 
 **/root：**一般根目录下只存放目录，不存放文件。
 
-**/bin：**存放可执行二进制文件的目录，如常用命令 ls、tar、mv、cat 等。 
+**/bin：**存放可执行二进制文件的目录，如常用命令` ls`、`mv`、`cat` 等。
 
-**/home：**为用户设置的目录，如用户 user 的主目录就是/home/user，也可以用~user 表示。
+**/home：**为用户设置的目录，如用户 user 的主目录就是 `/home/use`。
 
-**/dev：**device系统硬件设备目录，Linux系统所有的硬件都通过文件表示，访问该目录下某个文件，相当于访问某个设备，比如/dev/cdrom是光驱。
+**/dev：**系统硬件设备目录(device)，Linux系统所有的硬件都通过文件表示，访问该目录下某个文件，相当于访问某个设备，比如 `/dev/cdrom` 是光驱。
 
 **/etc：**存放系统配置文件的目录，比如：/ect/passwd 用于存储用户信息的文件、/etc/group 用于存储组别信息的文件。
 
@@ -34,7 +34,7 @@ Linux 文件系统是**树状结构**，系统中每个分区都是一个文件�
 
 **/usr：**unix system resource，应用程序存放目录，/usr/bin 存放应用程序，/usr/share 存放共享数据，/usr/lib 存放一些函数库文件， /usr/local存放软件升级包等。
 
-**/var：**存放运行时需要改变数据的的文件， 如随时更改的日志文件 /var/log 。
+**/var：**存放运行时需要改变数据的文件， 如随时更改的日志文件 /var/log 。
 
 **/mnt：**系统管理员安装临时文件系统的安装点，系统提供这个目录是让用户临时挂载其他的文件系统。
 
@@ -68,28 +68,29 @@ Linux 文件系统是**树状结构**，系统中每个分区都是一个文件�
 
 ### 3.Linux常用命令
 
-- ### 路径
+#### 路径
 
 ```bash
-pwd									#print work directory
-ls									#list files
-cd folder_path			#enter folder_path
-cd .. 							#back to previous folder
-cd ~    						#back to Home directory
-exit								#exit bash
+pwd				#print work/current directory
+ls		  	#list files
+cd [directory_path]  #enter directory_path
+cd .. 			#back to previous directory
+cd ~    		#back to home directory
+cd /    		#back to root directory
+exit				#exit bash
 ```
 
-- ### 文件夹
+#### 文件夹
 
 ```bash
-mkdir new_folder		#create new_folder in work directory
+mkdir [new_directory]		#create new_folder in work directory
 
-rm -ri folder_name	#remove folder with interaction
-rm -rf folder_name	#remove folder without interaction
-rmdir empty_folder	#remove empty_folder(not recommended)
+rm -ri [directory_name]		#remove directory with interaction
+rm -rf [directory_name]		#remove directory without interaction
+rmdir [empty_directory]		#remove empty_directory(not recommended)
 ```
 
-- ### 文件
+#### 文件
 
 ```bash
 touch new.txt 						#create new.txt in work directory
@@ -150,7 +151,7 @@ ls -a  #列出目录下的所有文件，包括以 . 开头的隐含文件。
 ls -s  #在每个文件名后输出该文件的大小。
 ```
 
-![image-20220515164215572](https://tva1.sinaimg.cn/large/e6c9d24ely1h296k2o2bgj2158034wf2.jpg)
+![image-20220627110500099](https://tva1.sinaimg.cn/large/e6c9d24ely1h3mmghc3qwj20y806ojsc.jpg)
 
 
 

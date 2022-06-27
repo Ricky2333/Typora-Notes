@@ -1,4 +1,4 @@
-# 实验四 Linux文件IO编程
+# 实验九 Linux文件IO编程
 
 
 
@@ -130,7 +130,7 @@ read(fd,buf,3);     //将文件fd的2个字符读入buf中
 read(STDIN,buf,2)   //将键盘输入的2个字符读入buf中
 ```
 
-##### 
+
 
 #### 2.3 write函数
 
@@ -165,7 +165,7 @@ write(fd,buf,3)            //将buf中的3个字节写入到文件fd中
 write(STDOUT_FILENO,buf,3) //将buf中的3个字节写入到屏幕上
 ```
 
-##### 
+
 
 #### 2.4 lseek函数
 
@@ -211,7 +211,7 @@ lseek(fd,100,SEEK_END);   //拓展文件长度，增加100字节
 write(fd," ",1);          //必须有这一步，写入空数据，否则无法拓展
 ```
 
-##### 
+
 
 #### 2.5 close函数
 
@@ -241,7 +241,7 @@ int close(int fd);
 close(fd);     //关闭当前文件fd
 ```
 
-##### 
+
 
 ### 3. 综合实例
 
