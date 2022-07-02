@@ -1,6 +1,10 @@
-# 实验二 Linux基础命令
+![【封面】Linux实验报告](https://tva1.sinaimg.cn/large/e6c9d24ely1h3spimoc4qj21ds0l4whu.jpg)
 
+作者｜Ricky的水果摊
 
+时间｜2022年6月27日
+
+---
 
 ## 实验目的
 
@@ -995,4 +999,6 @@ uptime
 | mkfifo  |                   make FIFOs (named pipes)                   |    int mkfifo(const char* pathname, mode_t mode)    |
 | system  |                   execute a shell command                    |          int system(const char  *command)           |
 | printf  |                    format and print data                     |             printf [format] [arguments]             |
+
+---
 
