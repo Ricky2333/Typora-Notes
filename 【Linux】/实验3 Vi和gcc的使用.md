@@ -1,6 +1,12 @@
 # 实验三 编辑器 vim 和编译器 gcc 的使用
 
+![【封面】Linux实验报告](https://tva1.sinaimg.cn/large/e6c9d24ely1h3spimoc4qj21ds0l4whu.jpg)
 
+作者｜Ricky的水果摊
+
+时间｜2022年6月28日
+
+---
 
 ## 实验目的
 
@@ -12,7 +18,7 @@
 
 ### 1. vi和vim简介
 
-[Vi的使用相关博文](https://blog.csdn.net/weixin_44618906/article/details/105613454)
+[Vi的使用相关博文—CSDN](https://blog.csdn.net/weixin_44618906/article/details/105613454)
 
 #### 1.1 vi
 

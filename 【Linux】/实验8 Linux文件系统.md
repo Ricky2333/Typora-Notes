@@ -1,6 +1,12 @@
 # 实验八 Linux 文件系统
 
+![【封面】Linux实验报告](https://tva1.sinaimg.cn/large/e6c9d24ely1h3spimoc4qj21ds0l4whu.jpg)
 
+作者｜Ricky的水果摊
+
+时间｜2022年6月2日
+
+---
 
 ## 实验目的
 
