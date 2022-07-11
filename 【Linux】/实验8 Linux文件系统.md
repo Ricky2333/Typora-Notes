@@ -10,11 +10,11 @@
 
 ## 实验目的
 
-+ 使用控制字符执行特殊功能； 使用 file 和 strings 命令确 定文件类型； 使用 cat 和 more 命令显示文本文件的内容；使用 head 和 tail 命令显示文本文件的部分内容；使用 wc 命令确定单词、行和字符数；使用 diff 命令 比较 2 个文件。
-+ 回顾文件和目录命名约定；使用 touch 命令创建新文件；使用 mkdir 命令创建新目录；使用 rm 命令删除文件；使用 rm -r 命令删除目录。
-+ 显示文件系统权限。确定文件的用户权限、属组权限或其他 (公共) 权限。确定对于一个可执行文件的文件权限。使用默认权限创建一个文件或目录。从命令行中修改权限：使用文件系统来控制安全访问。使用符号模式修改文件或目录的权限。
-+ 使用八进制模式修改文件或目录的权限
-+ 使用 vi 编辑器创建一个脚本文件，并且使它可执行
++ **使用 「控制字符」 执行特殊功能**；使用 `file` 和 `strings` 命令确定文件类型；	使用 `cat` 和 `more` 命令显示文本文件的内容；使用 `head` 和 `tail` 命令显示文本文件的部分内容；使用 `wc` 命令确定单词、行和字符数；使用 `diff` 命令比较 2 个文件。
++ 回顾 **文件和目录命名约定**；使用 `touch` 命令创建新文件；使用 `mkdir` 命令创建新目录；使用 `rm` 命令删除文件；使用 `rm -r` 命令删除目录。
++ **显示文件系统权限**，确定文件的用户权限、属组权限或其他 (公共) 权限，确定对于一个可执行文件的文件权限，使用默认权限创建一个文件或目录。
++ 从命令行中 **修改权限**：使用文件系统来控制安全访问，使用 **符号模式** 修改文件或目录的权限,使用 **八进制模式** 修改文件或目录的权限
++ 使用 vi 编辑器 **创建一个脚本文件**，并且使它可执行
 + 访问文件管理器，使用文件和目录权限工作；使用文件管理器确定文件或文件夹的权限；使用文件管理器修改文件或文件夹的权限。
 
 
@@ -23,166 +23,142 @@
 
 ### 1.文件信息命令
 
-**步骤 1：**开机，登录进入 GNOME
+**步骤 1**：开机，登录进入 GNOME
 
 在 GNOME 登录框中填写指导老师分配的用户名和口令并登录。 
 
-**步骤 2：**访问命令行
+**步骤 2**：访问命令行
 
-单击系统，在菜单中单击“系统工具”—“终端”命令，打开终端窗口。 
+单击系统，在菜单中单击 “系统工具”—“终端” 命令，打开终端窗口。 
 
-**步骤 3：**使用控制字符执行特殊功能
+**步骤 3**：使用「**控制字符**」执行特殊功能
 
-控制字符用来执行特殊的作业，如中止和启动屏幕输出。
+**控制字符** 用来执行特殊的作业，如中止和启动屏幕输出。
 
-**`Ctrl + C`**：中断当前活动。
 
-**`Ctrl + Z`**：终止当前活动。
+**`Ctrl + C`**：**终止** 当前进程。
+
+**`Ctrl + Z`**：**暂停** 当前进程。（进程进入 **悬挂状态**）
 
 **`Ctrl + D`**： 表示文件的末尾或者退出。
 
-**`Ctrl + U`**： 擦除整个命令行。如擦除输入密码，重新开始输入。
+**`Ctrl + U`**： 擦除整个命令行。**如擦除输入密码，重新开始输入。**
 
-**问题1**
+
+**问题1：**
 
 > **当你接下`Ctrl + Z`的时候，发生了什么事情？**
 
-**回答1**
+**回答1：**
 
 退出了当前manual，回到命令行界面
 
+<br/>
 
+**问题2：**
 
-**问题2:**
+1) 在 shell 提示符下键入 `bc` ，启动基本的计算器工具程序。
 
-1) 在 shell 提示符下键入 bc，启动基本的计算器工具程序。
-
-2) 把两个数字相乘 (键入：458*594，然后按回车键) 。
+2) 把两个数字相乘 (键入：`458*594` ，然后按回车键) 。
 
 3) 按 **`Ctrl + D`** 退出计算器。
 
 > **当使用计算器的时候，你的提示符是什么？**
 
 **回答2：**
-
-![image-20220608172807875](https://tva1.sinaimg.cn/large/e6c9d24ely1h30yr6w45sj21nu0b2gp3.jpg)
+![image-20220608172807875](https://img-blog.csdnimg.cn/img_convert/15566ae8bb2a542f6939c4dd5c4d169a.png)
 
 无提示符
 
+<br/>
 
-
-**问题3**
+**问题3：**
 
 > **输入一个命令，在接下回车键执行命令之前按下 `Ctrl + U`，结果是什么？**
 
-**回答3**
+**回答3：**
 
 当前指令被擦除
 
+<br/>
 
+**步骤 4**：使用 **file 命令** 确定文件类型
 
-**步骤 4：**使用 **file 命令 **确定文件类型
-
-file 命令可以用来确定文件类型，该命令最常见的输出格式有：文本文件、可执行文件或数据文件。 
+`file` 命令可以用来 **确定文件类型**，常见的输出格式有：文本文件、可执行文件或数据文件。 
 
 + **文本文件**：包括 ASCII 或英语文本、命令文本和可执行的 shell 脚本。这种类型的文件可以使用 cat 或 more 命令读取，可以使用 vi 或其他文本编辑器编辑。
 
 + **可执行 (或二进制) 文件**：包括 32 位的可执行文件和可扩展链接格式 (ELF) 编码文件，和其他动态链接的可执行文件。这种文件类型表示这个文件是一个命令或程序。 
+![image-20220608175107940](https://img-blog.csdnimg.cn/img_convert/17a6874f84e5dbcc3278bf20535bf26a.png)
 
-![image-20220608175107940](https://tva1.sinaimg.cn/large/e6c9d24ely1h30zf4duj6j21ri09kn1k.jpg)
+**步骤 5**：使用 **strings 命令**
 
+`strings` 命令用于读取可执行文件，如 /usr/bin/cat。在大多数情况下，`strings` 命令也可以给出命令的使用语法。
 
-
-**步骤 5：**使用 **strings 命令**
-
-strings 命令可以用于打印可执行文件或者二进制文件中的可读字符。 
-
-strings 命令必须用于读取可执行文件，如 /usr/bin/cat。在大多数情况下，strings 命令也可以给出命令的使 用语法。
-
-问题 
+**问题** 
 
 > **使用 strings 命令查看 /usr/bin/cat 文件的可读字符，列出 strings 命令中的一 些输出。**
 
-![image-20220608175520472](https://tva1.sinaimg.cn/large/e6c9d24ely1h30zji4n36j219q0a2wgo.jpg)
+![image-20220608175520472](https://img-blog.csdnimg.cn/img_convert/6e43744ba0ac3135c75983c73f2ddeec.png)
 
 
 
-**步骤 6：**使用 **cat 命令** 显示文件的内容
+**步骤 6**：使用 **cat 命令** 显示文件的内容
 
-cat 命令在屏幕上显示一个文本文件的内容,常用于显示如脚本文件这样的**短文本文件**。
-
-![image-20220608175933488](https://tva1.sinaimg.cn/large/e6c9d24ely1h30znwdsxxj213c08gdhc.jpg)           
-
+`cat` 命令在屏幕上显示一个文本文件的内容,常用于显示如脚本文件这样的**短文本文件**。
+![image-20220608175933488](https://img-blog.csdnimg.cn/img_convert/91db8fb4f2cd7ac2545e33b7b9ed89e0.png)           
 
 
-**步骤 7：**使用 **more 命令 **显示文件的内容
+**步骤 7**：使用 **more 命令** 显示文件的内容
 
-more 命令是一个用于显示文本文件首选的方法，因为它会自动的一次显示一屏文件内容。 
-
-![image-20220608180303640](https://tva1.sinaimg.cn/large/e6c9d24ely1h30zrjgkc9j215608ign5.jpg)
-
+`more` 命令是一个用于显示文本文件首选的方法，因为它会自动的一次显示一屏文件内容。 
+![image-20220608180303640](https://img-blog.csdnimg.cn/img_convert/e8e75e6fdb457ae2366b27beb89c303b.png)
 
 
-**步骤 8：**使用 **head 命令 **显示文件的一部分
+**步骤 8**：使用 **head 命令** 显示文件的一部分
 
-head 命令用于显示一个或多个文本文件的前 n 行。在默认情况下，如果没有给出 -n 选项，将显示前 10 行。当您只想查看文件的开始的几行，而不管文件的大小的时候，head 命令是很有用的。
+`head` 命令用于显示一个或多个文本文件的前 n 行。在默认情况下，如果没有给出 -n 选项，将显示前 10 行。当您只想查看文件的开始的几行，而不管文件的大小的时候，head 命令是很有用的。
+![image-20220608180721055](https://img-blog.csdnimg.cn/img_convert/24176952a8b355eec291095d45639735.png)
 
-![image-20220608180721055](https://tva1.sinaimg.cn/large/e6c9d24ely1h30zw04307j21cy0g6tce.jpg)
-
-![image-20220608180847559](https://tva1.sinaimg.cn/large/e6c9d24ely1h30zxhy3lnj21fm0s4wj1.jpg)
+![image-20220608180847559](https://img-blog.csdnimg.cn/img_convert/c0c3bedb30235ffb81dfcb280cd4f894.png)
 
 
 
-**步骤 9：**使用 **tail 命令 **显示文件的一部分
+**步骤 9**：使用 **tail 命令** 显示文件的一部分
 
-使用 tail 命令，显示文件的最后几行。在默认情况下，如果没有指定 -n 选项，将显示最后10 行。
-
-![image-20220608181054786](https://tva1.sinaimg.cn/large/e6c9d24ely1h30zzpmux2j21d40dudjh.jpg)
-
+使用 `tail` 命令，显示文件的最后几行。默认情况下，如果没有指定 -n 选项，将显示最后10 行。
+![image-20220608181054786](https://img-blog.csdnimg.cn/img_convert/4f1f4e07fb5d28707238bad3f9effc2b.png)
 
 
-**步骤 10：**通过使用 **wc 命令**，确定行数、单词数和字符数
+**步骤 10**：通过使用 **wc 命令**，确定行数、单词数和字符数
 
- wc (单词计数) 命令可以用于显示文本文件的行数、单词数、字节数或者字符数。使用不带选项的 wc 将给出文件的行数、字节数。使用带一个选项的 wc，可以确定想查看的哪一项内容。 
+ `wc` 命令可以用于显示文本文件的行数、单词数、字节数或者字符数。使用不带选项的 wc 将给出文件的行数、字节数。使用带一个选项的 wc，可以确定想查看的哪一项内容。 
+![image-20220608181813706](https://img-blog.csdnimg.cn/img_convert/8e1fdf42f2c0470c0b62c05b873d51fc.png)
 
-![image-20220608181813706](https://tva1.sinaimg.cn/large/e6c9d24ely1h3107bh6edj21cm02w75n.jpg)
+**步骤 11**：使用 **ls | wc** 
 
+使用 `wc 和 ls` 命令可以确定主目录中条目 (文件和目录) 的数目。
+![image-20220608182138098](https://img-blog.csdnimg.cn/img_convert/19b7dbd55e3d701d66651a403f9e9fb4.png)
 
+**步骤 12**：使用 **diff 命令** 确定文件之间的不同之处
 
-
-
-**步骤 11：**使用 **ls | wc** 
-
-使用 **wc 和 ls** 命令可以确定主目录中条目 (文件和目录) 的数目。
-
-![image-20220608182138098](https://tva1.sinaimg.cn/large/e6c9d24ely1h310avadiij21vo09atd7.jpg)
-
-
-
-
-
-**步骤 12：**使用 **diff 命令 **确定文件之间的不同之处
-
-diff 命令用于比较 2 个文本文件，找出在它们之间的不同之处。
+`diff` 命令用于比较 2 个文本文件，找出在它们之间的不同之处。
 
 该命令有 2 个选项：-i 和 -c
 
 + -i 选项忽略字母的大小写，例如 A 和 a 相等
 + -c 选项执行细致的比较。
+![image-20220609091400568](https://img-blog.csdnimg.cn/img_convert/112aa1047acea6bd3d4d454afdb548b8.png)
 
-![image-20220609091400568](https://tva1.sinaimg.cn/large/e6c9d24ely1h31q3dpg1oj21pw0k8djk.jpg)
+**步骤 13**：关闭终端窗口，注销
 
-
-
-**步骤 13：**关闭终端窗口，注销
-
-
+<br/>
 
 ### 2. 基本的命令行文件管理
 
-**步骤 14：**回顾 Linux 的文件和目录**命名规则**
+**步骤 14**：回顾 Linux 的文件和目录**命名规则**
 
-+ **最大长度：**组成文件和目录名最大长度为 255 个数字/字母字符，应尽可能保持文件名简洁且有意义
++ **最大长度**：组成文件和目录名最大长度为 255 个数字/字母字符，应尽可能保持文件名简洁且有意义
 
 + **非数字字母字符：**
 
@@ -192,11 +168,11 @@ diff 命令用于比较 2 个文本文件，找出在它们之间的不同之处
 
   分号 (;) 、小于号 (<) 和大于号 (>) 是不允许作为文件名的
 
-+ **文件名扩展：**文件名可以包含一个或多个扩展名，扩展名常被一个应用追加到文件的末端。扩展名通常是 1 个到 3 个字符，追加到文件名的末端
++ **文件名扩展**：文件名可以包含一个或多个扩展名，扩展名常被一个应用追加到文件的末端。扩展名通常是 1 个到 3 个字符，追加到文件名的末端
 
-+ **目录名的扩展名：**目录名一般不包含扩展名，但是也没有规则反对这一点
++ **目录名的扩展名**：目录名一般不包含扩展名，但是也没有规则反对这一点
 
-+ **大小写敏感：**Linux 文件和目录名是大小写敏感的。Project1 和 project1不是同一个文件。在一个目录中，不能够有两个文件有着同样的名字。一般规则都是使用小写字母
++ **大小写敏感**：Linux 文件和目录名是大小写敏感的。Project1 和 project1不是同一个文件。在一个目录中，不能够有两个文件有着同样的名字。一般规则都是使用小写字母
 
 |       文件名       | 是否为Linux文件名或目录名 |      判断理由      |
 | :----------------: | :-----------------------: | :----------------: |
@@ -209,135 +185,121 @@ diff 命令用于比较 2 个文本文件，找出在它们之间的不同之处
 
 
 
-**步骤15：**使用 **touch 命令** 创建文件
+**步骤15**：使用 **touch 命令** 创建文件
 touch命令可以同时创建一个或多个文件，对于快速创建需要处理的文件很有用。touch命令也可以用来更新文件被访问的时间和日期，使文件可以再次被备份，当创建文件或目录的时候，可以指定绝对和相对的路径名。
 
-命令格式： **`touch filename`**
+命令格式： `touch filename`
 
 1) 在主目录中使用 touch 命令创建一个名为 newfile 的文件，应该使用什么命令?
-
 ```bash
 touch newfile
 ```
 
 2. 使用 touch 命令在这个目录中创建另一个叫做 filenew 的新文件，应该使用什么命令？ 
-
 ```bash
 touch filenew
 ```
 
 3. 输入命令显示 practice 目录中的文件的长列表。创建的文件列出来了吗？
-
-![image-20220609095810112](https://tva1.sinaimg.cn/large/e6c9d24ely1h31rdbxewej213u02ugme.jpg)
+![image-20220609095810112](https://img-blog.csdnimg.cn/img_convert/1f35052694e646fbcdc228f7c59a252a.png)
 
 4. 谁是文件的所有者？和文件关联的组是什么？创建的日期和时间是什么？
-
-![image-20220609100156606](https://tva1.sinaimg.cn/large/e6c9d24ely1h31rh9d6r1j219e05mtau.jpg)
+![image-20220609100156606](https://img-blog.csdnimg.cn/img_convert/96fb265ccdc72528033da34f7dcce74d.png)
 
 5. 文件的大小是多少？
-
-**![image-20220609172420589](https://tva1.sinaimg.cn/large/e6c9d24ely1h3249kgcbyj215u0460u0.jpg)**
-
+![image-20220609172420589](https://img-blog.csdnimg.cn/img_convert/fca924ec0b5fd605b686b0fdcdb22b18.png)
 6. 使用 file 命令确定 newfile 的文件类型。它是哪一类的文件？
-
-![image-20220609102142487](https://tva1.sinaimg.cn/large/e6c9d24ely1h31s1tiemij2172030750.jpg)
+![image-20220609102142487](https://img-blog.csdnimg.cn/img_convert/290d7e7dd15e4b42f24fcc8042902145.png)
 
 7. 使用 touch 命令同时创建 3 个文件：new1、new2 和 new3，应该使用什么命令？
-
 ```bash
 touch new1 new2 new3
 ```
 
 
+**步骤16**：使用 **mkdir命令** 创建新目录
 
-**步骤16：**使用 **mkdir命令 **创建新目录
+命令格式： `mkdir diretory._name`
 
-命令格式： **`mkdir diretory._name`**
-
-1. 从主目录中，使用相对路径名改变到 practice 目录中，使用什么命令？
+1.从主目录中，使用相对路径名改变到 practice 目录中，使用什么命令？
 
 ```bash
 cd practice
 ```
 
-2. 使用 mkdir 命令，在这个目录中创建一个叫做 newdir 的子目录，使用什么命令？
+2.使用 mkdir 命令，在这个目录中创建一个叫做 newdir 的子目录，使用什么命令？
 
 ```bash
 mkdir newdir
 ```
 
-3. 输入命令，显示 practice目录中文件和目录的长列表。创建的目录列出来了吗？
+3.输入命令，显示 practice目录中文件和目录的长列表。创建的目录列出来了吗？
+![image-20220609102640273](https://img-blog.csdnimg.cn/img_convert/9fc6924abb78f9a962ec2f86693c44fe.png)
 
-![image-20220609102640273](https://tva1.sinaimg.cn/large/e6c9d24ely1h31s6zkzwpj215o0aytcp.jpg)
-
-4. 目录的所有者是？
-
+4.目录的所有者是？
 > 所有者是parallels
 
-5. 使用 file 命令确定 newdir 文件的类型，它是哪一类的文件？
+5.使用 file 命令确定 newdir 文件的类型，它是哪一类的文件？
+![image-20220609102829538](https://img-blog.csdnimg.cn/img_convert/83a4a90c8b2e82671d03533c32c46d99.png)
 
-![image-20220609102829538](https://tva1.sinaimg.cn/large/e6c9d24ely1h31s8vreyuj216c036aaz.jpg)
-
-6. 如果名字中没有字符 dir，采取别的什么方法来识别出它是一个目录？
+6.如果名字中没有字符 dir，采取别的什么方法来识别出它是一个目录？
 
 > 根据高亮的颜色区分
 
-7. mkdir 命令创建3个目录，目录名分别为 high、 medium 和 low，应该使用什么命令？
+7.mkdir 命令创建3个目录，目录名分别为 high、 medium 和 low，应该使用什么命令？
 
 ```bash
 mkdir high medium low
 ```
 
-8. 用ls命令检查创建是否成功
+8.用ls命令检查创建是否成功
+![image-20220609103002242](https://img-blog.csdnimg.cn/img_convert/4135933df1d0ae976f7e1668670ec327.png)
+<br/>
 
-![image-20220609103002242](https://tva1.sinaimg.cn/large/e6c9d24ely1h31sahegyvj211s02q0tv.jpg)
+**步骤17**：使用 **rm 命令** 删除文件
+`rm` 命令可以删除单个文件或多个文件，可以通过在 `rm` 命令之后指定文件的名字，或者使用（*）和（?）通配符，同时删除几个文件。
 
+在 Linux 系统中删除的文件是永远被删除了，除非使用图形界面删除文件，它们才能够被恢复。rm 命令可以带 -i 选项使用，它在删除文件之前会提示用户，避免误删文件。
 
+命令格式：`rm [-i] filename `
+<br/>
 
-**步骤17：**使用 **rm 命令 **删除文件
-rm 命令可以删除单个文件或多个文件，可以通过在 rm 命令之后指定文件的名字，或者使用（*）和（?）通配符，同时删除几个文件。
-
-在 Linux 系统中删除的文件是永远被删除了，除非使用图形界面删除文件，它们才能够被恢复。rm 命令可以带 -i 选项使用，它在删除文件之前会提示用户，避免误删文件
-
-命令格式：**`rm [-i] filename `**
-
-1. 使用rm 命令删除早先在 practice 目录中创建的 newfile 文件，应该使用什么命令？
+1.使用 rm命令 删除早先在 practice 目录中创建的 newfile 文件，应该使用什么命令？
 
 ```bash
 rm newfile
 ```
 
-3. 使用带-i选项的rm 命令，删除早先在 practice 目录中创建的 filenew文件，交互式选项起到什么作用？
+2.用带 -i 的 rm 命令，删除早先在 practice 目录中创建的 filenew 文件。
+![image-20220609103234423](https://img-blog.csdnimg.cn/img_convert/f33c91ec73f745e2165b2160170a1e85.png)
 
-![image-20220609103234423](https://tva1.sinaimg.cn/large/e6c9d24ely1h31sd4gw8aj217i030ab7.jpg)
-
-4. 删除早先创建的三个名为 new1、new2 和 new3 的文件。使用(?)通配符，用一个命令删除所有三个文件
+3.删除早先创建的三个名为 new1、new2 和 new3 的文件。使用(?)通配符，用一个命令删除所有三个文件
 
 ```bash
 rm new?
 ```
 
+<br/>
 
-
-**步骤18：**使用 **rm -r命令**删除目录
+**步骤18**：使用 **rm -r命令** 删除目录
 
 rm -r 目录用于删除目录，它将删除从目标目录开始的目录，包括所有的子目录和文件。
 
-命令格式：**`rm -ri directory_name`**
+命令格式：`rm -ri directory_name`
 
-1. 删除早先创建的 newdir 子目录，使用什么命令？
+1.删除早先创建的 newdir 子目录，使用什么命令？
 
 ```bash
 rm -ri newdir
 ```
 
-2. 用相对路径名和快捷方式，改变回到 practice 子目录中，应使用什么命令？
+2.用相对路径名和快捷方式，改变回到 practice 子目录中，应使用什么命令？
 
 ```bash
 cd ..
 ```
 
-3. 使用一个命令删除 high 和 medium 子目录，应使用什么命令？
+3.使用一个命令删除 high 和 medium 子目录，应使用什么命令？
 
 ```bash
 rm -ri high medium
@@ -345,40 +307,39 @@ rm -ri high medium
 
 
 
-**步骤19：**练习所学习到的内容
+**步骤19**：练习所学习到的内容
 通过在 practice 目录中创建一个三级的目录树，练习使用 touch、 mkdir 和 rm命令，记住可以使用一个命令创建整个目录结构。在每个目录中创建多个文件，结束的时候，请删除实验时创建的文件和目录。
 
 
 
-**步骤20：**关闭终端窗口，注销
+**步骤20**：关闭终端窗口，注销
 
-
+<br/>
 
 ### 3. 文件系统权限操作
 
-**步骤 1：**开机，登录进入 GNOME
+**步骤 1**：开机，登录进入 GNOME
 
 在 GNOME 登录框中填写指导老师分配的用户名和口令并登录。
 
 
 
-**步骤 2：**访问命令行
+**步骤 2**：访问命令行
 
 单击“应用程序”菜单中单击“系统工具”-“终端”命令，打开终端窗口。
 
 
 
-**步骤 3：**显示权限
+**步骤 3**：显示权限
 
 权限控制着谁能够对文件系统中的文件和目录做什么。目录和文件权限可以使用 **`ls -l`** 命令来确定。
+![image-20220609165528054](https://img-blog.csdnimg.cn/img_convert/ccab8513c39b9b95ee70b035540e8111.png)
 
-![image-20220609165528054](https://tva1.sinaimg.cn/large/e6c9d24ely1h323fiudknj21m00ak0wc.jpg)
-
-![image-20220609165549256](https://tva1.sinaimg.cn/large/e6c9d24ely1h323fvyc8vj21lw0is78n.jpg)
-
+![image-20220609165549256](https://img-blog.csdnimg.cn/img_convert/3c2f3136ed72de9fa4b2b969eab89587.png)
 
 
-**步骤4：**解释权限
+
+**步骤4**：解释权限
 
 | 符号 |    权限    |                        普通文件                        |
 | :--: | :--------: | :----------------------------------------------------: |
@@ -389,105 +350,101 @@ rm -ri high medium
 
 
 
-**步骤 5：**确定文件的用户权限
+**步骤 5**：确定文件的用户权限
 
 9个权限被分成3个权限1组，每组的3个权限总是按照 r、w、x的顺序排列，如果无当前权限，将由-代替
 
 第 1 组的3个权限是 **用户的权限组**，这些权限决定其所有者能够做什么。
 
 > 实践：创建一个test的文件，向test中输入适量的文本，查看test文件的相关权限
+> ![image-20220609171102878](https://img-blog.csdnimg.cn/img_convert/c2ede2fd50d086e950a242ffad7650fe.png)
 
-![image-20220609171102878](https://tva1.sinaimg.cn/large/e6c9d24ely1h323vqootgj21e6046wg0.jpg)
-
-1. 谁是 test 文件的所有者？
+1.谁是 test 文件的所有者？
 
 > parallels
 
-2. 用户权限的头 2 个字符是什么？
+2.用户权限的头 2 个字符是什么？
 
 > rw → 表示可读可写
 
-3. 在用户的权限组中，第 3 个位置是什么？
+3.在用户的权限组中，第 3 个位置是什么？
 
 > \- → 表示无执行权限
 
-4. 列出根据所给的文件权限，用户 (所有者) 能够做的 4 件事情。
+4.列出根据所给的文件权限，用户 (所有者) 能够做的 4 件事情。
 
 > 读取、修改、删除、拷贝
 
 
 
-**步骤 6：**确定文件的属组权限
+**步骤 6**：确定文件的属组权限
 
 系统管理员给每一个用户分配了一个主属组，第 2 组的 3 个权限决定了主属组的成员能够做什么
+![image-20220609171102878](https://img-blog.csdnimg.cn/img_convert/c2ede2fd50d086e950a242ffad7650fe.png)
 
-![image-20220609171102878](https://tva1.sinaimg.cn/large/e6c9d24ely1h323vqootgj21e6046wg0.jpg)
-
-1) test 文件的所有者是什么主属组的成员？
+1.test 文件的所有者是什么主属组的成员？
 
 > parallels
 
-2. 属组权限的第一个字符是什么？这允许属组的其他成员对文件进行什么操作？
+2.属组权限的第一个字符是什么？这允许属组的其他成员对文件进行什么操作？
 
 > r / 可读
 
 
 
-**步骤 7：**确定文件的其他 (公共) 权限
+**步骤 7**：确定文件的其他 (公共) 权限
 
 最后一组字符，叫做其他权限，是其他每一个人都有的权限。其他指既不是文件所有者也不是文件所有者所在属组的成员，但是有权访问系统的所有人。 
+![image-20220609171102878](https://img-blog.csdnimg.cn/img_convert/c2ede2fd50d086e950a242ffad7650fe.png)
 
-![image-20220609171102878](https://tva1.sinaimg.cn/large/e6c9d24ely1h323vqootgj21e6046wg0.jpg)
-
-1. 不是所有者和属组的其他人对 test 文件有什么权限？
+1.不是所有者和属组的其他人对 test 文件有什么权限？
 
 > 不是所有者和属组的其他人有 可读权限
 
+<br/>
 
+**步骤 8**：确定可执行文件的文件权限
+![image-20220609173518170](https://img-blog.csdnimg.cn/img_convert/6fc33429556608c6a86527c9619842ae.png)
 
-**步骤 8：**确定可执行文件的文件权限
-
-![image-20220609173518170](https://tva1.sinaimg.cn/large/e6c9d24ely1h324kz019dj219y02ujsa.jpg)
-
-1) 从主目录中显示在 /usr/bin 目录中的 bc 文件的长目录列表。使用什么命令？
+1.从主目录中显示在 /usr/bin 目录中的 bc 文件的长目录列表。使用什么命令？
 
 ```c
 ls -l /usr/bin/bc
 ```
 
-2. 用户权限是什么？
+2.用户权限是什么？
 
 > 可读、可写、可执行
 
-3. 属组权限是什么？
+3.属组权限是什么？
 
 >  可读、可执行
 
-4. 其他权限是什么？
+4.其他权限是什么？
 
 > 可读、可执行
 
+<br/>
 
 
-**步骤 9：**使用默认权限创建一个新文件
+**步骤 9**：使用默认权限创建一个新文件
 
 使用默认权限创建新文件，使用 touch 命令在主目录中创建一个新文件
 
-1) 在主目录中创建一个叫做 newfileperms 的新文件，使用什么命令和路径名？
+1.在主目录中创建一个叫做 newfileperms 的新文件，使用什么命令和路径名？
 
 ```bash
 touch ~/newfileperms
 ```
 
-2. 查看 newfileperms 的权限，使用什么命令和路径名？
+2.查看 newfileperms 的权限，使用什么命令和路径名？
 
 ```bash
 ls -l newfileperms
 ```
+![image-20220609174503268](https://img-blog.csdnimg.cn/img_convert/c534330fee2ec8b6337e769f381500b1.png)
 
-![image-20220609174503268](https://tva1.sinaimg.cn/large/e6c9d24ely1h324v48r1yj212e02w0tj.jpg)
-
-3) 分配给这个文件的默认权限是什么？
+3.分配给这个文件的默认权限是什么？
 
 > 用户：可读、可写
 >
@@ -495,73 +452,73 @@ ls -l newfileperms
 >
 > 其他用户：可读
 
-4. 谁是所有者？
+4.谁是所有者？
 
 > parallels
 
-5. 谁是主属组？
+5.谁是主属组？
 
 > parallels
 
-6. 主属组的成员能够重新命名这个文件吗？
+6.主属组的成员能够重新命名这个文件吗？
 
 > 可以
 
+<br/>
 
+**步骤 10**：使用默认权限创建一个新目录
 
-**步骤 10：**使用默认权限创建一个新目录
+使用 `mkdir` 命令创建一个新目录。
 
-使用 mkdir 命令创建一个新目录。
-
-1. 在主目录的 practice 目录中创建一个叫做 newdirperms 的新目录。使用什么命令和路径名？ 
+1.在主目录的 practice 目录中创建一个叫做 newdirperms 的新目录。使用什么命令和路径名？ 
 
 ```bash
 mkdir ~/Desktop/practice/newdirperms
 ```
 
-2. 列出主目录中的内容，查看 newdirperms 的权限。使用什么命令和路径名？
+2.列出主目录中的内容，查看 newdirperms 的权限。使用什么命令和路径名？
 
 ```bash
 ls -l practice
 ```
 
-![image-20220609191443337](https://tva1.sinaimg.cn/large/e6c9d24ely1h327gf64n2j214q042my4.jpg)
+![image-20220609191443337](https://img-blog.csdnimg.cn/img_convert/8233313fa7ac5adeabc366ed770c0880.png)
 
-3. 分配给这个目录的默认权限是什么？
+3.分配给这个目录的默认权限是什么？
 
 >  用户：可读、可写、可执行
 >
-> 主属组：可读、可写、可执行
+>  主属组：可读、可写、可执行
 >
-> 其他用户：可读、可执行
+>  其他用户：可读、可执行
 
-4. 谁是所有者？
-
-> parallels
-
-5. 谁是主属组？
+4.谁是所有者？
 
 > parallels
 
-6. 一个主属组的成员能够在这个目录中添加文件吗？
+5.谁是主属组？
+
+> parallels
+
+6.一个主属组的成员能够在这个目录中添加文件吗？
 
 > 可以
 
+<br/>
 
+**步骤 11**：回顾 chmod 命令模式
 
-**步骤 11：**回顾 chmod 命令模式
-
-chmod命令 被文件所有者 (或超级用户) 用来修改文件权限
+`chmod`命令 被文件所有者 (或超级用户) **用来修改文件权限**。
 
 + 符号模式：使用字母与符号的组合，为不同类别的用户添加或删除权限， 符号模式也叫做相对模式。
 
 + 八进制模式：使用数字表示文件权限，八进制模式也叫做绝对或者数字模式。
 
-命令格式：**`chmod mode filename`**
+命令格式：`chmod mode filename`
 
+<br/>
 
-
-**步骤 12：**使用符号模式修改文件权限
+**步骤 12**：使用符号模式修改文件权限
 
 符号模式的命令格式使用字母和符号，命令的模式部分由 3 个部分组成：
 
@@ -569,87 +526,81 @@ chmod命令 被文件所有者 (或超级用户) 用来修改文件权限
 + 操作：设定 (=) ，删除 (-) ，给予 (+) 
 + 权限：r = 读，w = 写，x = 执行
 
-1. 在主目录中使用相对路径名创建一个叫做 chmoddir 的新目录。使用什么命令创建目录？
+1.在主目录中使用相对路径名创建一个叫做 chmoddir 的新目录。使用什么命令创建目录？
 
 ```bash
 mkdir chomoddir
 ```
 
-2. 改变到 chmoddir 目录中，创建一个叫做 symfile 的新文件,使用什么命令创建文件？
+2.改变到 chmoddir 目录中，创建一个叫做 symfile 的新文件,使用什么命令创建文件？
 
 ```bash
 touch symfile
 ```
 
-3. 使用 ls -l 命令来确定 symfile 的权限
+3.使用 ls -l 命令来确定 symfile 的权限
+![image-20220609215458088](https://img-blog.csdnimg.cn/img_convert/bf0bd6c537bc427512fd3fdfb15ab1a8.png)
 
-![image-20220609215458088](https://tva1.sinaimg.cn/large/e6c9d24ely1h32c36u5ofj213w0480tm.jpg)
-
-4. 使用 chmod 命令，在符号模式下，删除其他用户对于文件 symfle 的读权限，使用什么命令？
+4.使用 chmod 命令，在符号模式下，删除其他用户对于文件 symfle 的读权限，使用什么命令？
 
 ```
 chmod o-r symfile
 ```
+![image-20220609215722672](https://img-blog.csdnimg.cn/img_convert/fa3489bcbbc8d10ad0d4d0aab3e11992.png)
 
-![image-20220609215722672](https://tva1.sinaimg.cn/large/e6c9d24ely1h32c5ndipyj21ak05iabv.jpg)
-
-6. 如果想只使用一个命令删除属组和其他类别的读权限，使用什么命令？
+5.如果想只使用一个命令删除属组和其他类别的读权限，使用什么命令？
 
 ```bash
 chmod og-r symfile
 ```
+![image-20220609220456254](https://img-blog.csdnimg.cn/img_convert/fb350917dd44b4bd9285e1fecb5bb076.png)
+<br/>
 
-![image-20220609220456254](https://tva1.sinaimg.cn/large/e6c9d24ely1h32cdiu9vsj21aw05mdho.jpg)
+**步骤 13**：使用符号模式修改目录权限。 
 
-
-
-**步骤 13：**使用符号模式修改目录权限。 
-
-1) 改变回到主目录，使用什么命令？
+1.改变回到主目录，使用什么命令？
 
 ```bash
 cd ..
 ```
 
-2. 从主目录中列出早先创建的新的 chmoddir 目录的权限
+2.从主目录中列出早先创建的新的 chmoddir 目录的权限
+![image-20220609220857938](https://img-blog.csdnimg.cn/img_convert/b67625d7940d922c70de0f28cc1f31fa.png)
 
-![image-20220609220857938](https://tva1.sinaimg.cn/large/e6c9d24ely1h32chpw0ylj213604yjso.jpg)
+3.除了自己或者属组成员以外的其他用户能够从 chmoddir 目录中拷贝文件吗？为什么能或者为什么不能？
+![image-20220609221735896](https://img-blog.csdnimg.cn/img_convert/c5c67d1dc71a3ef4b5f40ee14981c194.jpeg)
 
-3. 除了自己或者属组成员以外的其他用户能够从 chmoddir 目录中拷贝文件吗？为什么能或者为什么不能？
-
-![image-20220609221735896](https://tva1.sinaimg.cn/large/e6c9d24ely1h32cqow7n0j214a05qmzc.jpg)
-
-4. 使用 chmod 命令，在符号模式下，删除其他类别用户对于目录 chmoddir的读和执行权限
+4.使用 chmod 命令，在符号模式下，删除其他类别用户对于目录 chmoddir的读和执行权限
 
 ```b
 chmod o-rx chmoddir
 ```
 
-5) 再次列出目录的权限。其他类别用户的权限是什么？
+5.再次列出目录的权限。其他类别用户的权限是什么？
 
-![image-20220609222427819](https://tva1.sinaimg.cn/large/e6c9d24ely1h32cxtyajcj211e05i400.jpg)
+![image-20220609222427819](https://img-blog.csdnimg.cn/img_convert/db2890dcc6e27024cbb67e30a7530120.png)
 
-6) 主属组成员能够在你的 chmoddir 目录中创建或者拷贝文件吗？为什么能或者为什么不能？
+6.主属组成员能够在你的 chmoddir 目录中创建或者拷贝文件吗？为什么能或者为什么不能？
 
-![image-20220609222604908](https://tva1.sinaimg.cn/large/e6c9d24ely1h32czisrgbj217s040gn7.jpg)
+![image-20220609222604908](https://img-blog.csdnimg.cn/img_convert/d6c04bdda968fcc83ab8a98d4e9777ea.png)
 
-7) 使用 chmod 命令，在符号模式下，给主属组去除对目录 chmoddir 的读权限，使用什么命令？
+7.使用 chmod 命令，在符号模式下，给主属组去除对目录 chmoddir 的读权限，使用什么命令？
 
 ```bash
 chmod g-r chmoddir
 ```
 
+<br/>	
 
+**步骤 14**：确定八进制权限。
 
-**步骤 14：**确定八进制权限。
-
-八进制模式为同时修改所有类别用户的权限提供了一个快捷的数字方式，而且仍然允许每组权限不同。
+**八进制模式** 为同时修改所有类别用户的权限提供了一个快捷的数字方式，而且允许每组权限不同。
 
 + r 权限指派数为 4，w 权限指派数为 2，x 权限指派为 数字 1
 
 + 例如，如果所有者的权限是 rwx，有 4 + 2 +1 = 7；如果主属组有 rw 权限，有 4 + 2 + 0= 6；如果其他用户只有 r 权限，有4 + 0 + 0 = 4，所以这个文件或目录的 octal_mode 是 764
 
-练习：
+**练习：**
 
 | 用户权限 | 八进制数 | 属组权限 | 八进制数 | 其他权限 | 八进制数 | 八进制模式权限 |
 | :------: | :------: | :------: | :------: | :------: | :------: | :------------: |
@@ -658,118 +609,104 @@ chmod g-r chmoddir
 |   r--    |    4     |   r--    |    4     |   r--    |    4     |      444       |
 |   rwx    |    7     |   r–x    |    5     |   r–x    |    5     |      755       |
 
+![image-20220609221735896](https://img-blog.csdnimg.cn/img_convert/88f2ae7ad39fa1f9f1ddfbb4742c79dc.jpeg)
 
+<br/>
 
-**步骤15：**使用八进制模式修改文件权限
+**步骤15**：使用八进制模式修改文件权限
 使用八进制模式，没有必要指定用户的类别，因为每个数字的位置表示了三种用户类别中的一种。Octal mode 由三个数字组成，每个都是一种用户类别的总和。
 
-命令格式：**`chmod octal_mode filename`**
+命令格式：`chmod octal_mode filename`
 
-1. 改变到 chmoddir 目录中，创建一个叫做 octfile 的新文件，使用什么命令创建文件？
+1.改变到 chmoddir 目录中，创建一个叫做 octfile 的新文件，使用什么命令创建文件？
 
 ```bash
 touch octfile
 ```
 
-2. 用 ls -l 命令来确定 octfile 的权限，这些是文件的默认权限，用户、主属组和其他用户的权限是什么？
-
-![image-20220609224619546](https://tva1.sinaimg.cn/large/e6c9d24ely1h32dkkvcpcj20z603y759.jpg)
-
-3) 与这个文件的用户、主属组和其他权限等同的八进制模式是什么？
+2.用 ls -l 命令来确定 octfile 的权限，这些是文件的默认权限，用户、主属组和其他用户的权限是什么？
+![image-20220609224619546](https://img-blog.csdnimg.cn/img_convert/cdb655e64186cef3a7e437e3c75fce73.png)
+3.与这个文件的用户、主属组和其他权限等同的八进制模式是什么？
 
 > 664
 
-4) 使用 chmod 命令，在八进制模式下，删除其他用户对于 octfile 的 r (读) 权限，使用什么命令？
+4.使用 chmod 命令，在八进制模式下，删除其他用户对于 octfile 的 r (读) 权限，使用什么命令？
 
 ```bash
 chmod 660 octfile
 ```
 
-5) 再次列出文件的权限，其他用户类别现在的权限是什么？
+5.再次列出文件的权限，其他用户类别现在的权限是什么？
+![image-20220609224919141](https://img-blog.csdnimg.cn/img_convert/a931a96f437a82ad8247c882e28d47e2.png)
 
-![image-20220609224919141](https://tva1.sinaimg.cn/large/e6c9d24ely1h32dnpaj8ij215o05ojsz.jpg)
-
-6) 如果想只使用一个命令，删除属组和其他类别的所有权限，使用什么命令？
+6.如果想只使用一个命令，删除属组和其他类别的所有权限，使用什么命令？
 
 ```bash
 chmod 600 octfile
 ```
 
+<br/>
 
-
-**步骤 16：**使用八进制模式修改目录权限。 
+**步骤 16**：使用八进制模式修改目录权限。 
 
 下面的格式用于修改目录的权限，-R (递归) 选项修改指定目录的权限，包括其中的所有子目录和文件。
 
-命令格式：**`chmod [-R] octal_mode directoryname`**
+命令格式：`chmod [-R] octal_mode directoryname`
 
-1. 改变到主目录，使用什么命令？
+1.改变到主目录，使用什么命令？
 
 ```bash
 cd ..
 ```
 
-2) 从主目录中列出 chmoddir 目录的权限，对于用户、主属组和其他用户的权限是什么？
+2.从主目录中列出 chmoddir 目录的权限，对于用户、主属组和其他用户的权限是什么？
+![image-20220609225432485](https://img-blog.csdnimg.cn/img_convert/5475fd10d316d189c43559d06456e325.png)
 
-![image-20220609225432485](https://tva1.sinaimg.cn/large/e6c9d24ely1h32dt4wz33j213c050gmw.jpg)
-
-3) 该目录权限的八进制码是什么?
+3.该目录权限的八进制码是什么?
 
 > 755
 
-4) 在八进制模式下，删除其他用户对于目录 chmoddir 的读和写权限，使用什么命令？
+4.在八进制模式下，删除其他用户对于目录 chmoddir 的读和写权限，使用什么命令？
 
 ```bash
 chmod 751 chmoddir
 ```
 
-5) 再次列出目录的权限，其他用户类别的权限现在是什么？用户和属组的权限保持不变吗？
-
-![image-20220609225845683](https://tva1.sinaimg.cn/large/e6c9d24ely1h32dxiqq02j211205ita5.jpg)
-
-6. 使用八进制模式把权限改回默认权限 (rwxr-xr-x) 
+5.再次列出目录的权限，其他用户类别的权限现在是什么？用户和属组的权限保持不变吗？
+![image-20220609225845683](https://img-blog.csdnimg.cn/img_convert/56a91182da1dd2c778e66a7d04b818e8.png)
+6.使用八进制模式把权限改回默认权限 (rwxr-xr-x) 
 
 ```bash
 chmod 755 chmoddir
 ```
+<br/>
 
-
-
-**步骤 17：**创建一个脚本文件，使它能够执行。
+**步骤 17**：创建一个脚本文件，使它能够执行。
 
 在本步骤中，将使用 vi 编辑器创建一个简单的文本脚本文件，脚本文件在自动重复作业的时候非常有用。
 
-1) 进入 chmoddir 目录，启动 vi 编辑器， 创建一个名为 myscript 的文件，输入 echo “hello!”
+1.进入 chmoddir 目录，启动 vi 编辑器， 创建一个名为 myscript 的文件，输入 echo “hello!”
 
-2. 按下 ESC 键，返回命令模式，然后输入一个冒号，进入末行模式。按下 wq 来保存)文件，然后退出 vi
+2.按下 ESC 键，返回命令模式，然后输入一个冒号，进入末行模式。按下 wq 来保存)文件，然后退出 vi
 
-3) 列出文件，它的权限是什么？
+3.列出文件，它的权限是什么？
+![image-20220609230545991](https://img-blog.csdnimg.cn/img_convert/41e8d66d06bdea9997ad3c62ab4f0a63.png)
 
-![image-20220609230545991](https://tva1.sinaimg.cn/large/e6c9d24ely1h32e4teod2j210m040jse.jpg)
-
-4) 键入 ./myscript，就像它是一个命令，然后按下回车键，命令的响应是什么？
-
-![image-20220609230641020](https://tva1.sinaimg.cn/large/e6c9d24ely1h32e5rka6fj211y02yaay.jpg)
-
+4.键入 ./myscript，就像它是一个命令，然后按下回车键，命令的响应是什么？
+![image-20220609230641020](https://img-blog.csdnimg.cn/img_convert/fe757cb4f3a90040fc6dcef9827f5290.png)
 5. 修改 myscript 的权限，使得用户权限包括 x (执行) 。使用什么命令修改权限？
 
 ```bash
 chmod 764 myscript
 ```
+6.列出文件，检查修改的权限，用户 (所有者) 现在的权限是什么？
+![image-20220609230958725](https://img-blog.csdnimg.cn/img_convert/73b37a265ef5e7c978ecd02d8a9711a3.png)
 
-6) 列出文件，检查修改的权限，用户 (所有者) 现在的权限是什么？
+7.再次把 myscript 作为一个命令键入，然后按下回车键，命令的响应是什么？
+![image-20220609231312960](https://img-blog.csdnimg.cn/img_convert/f26f1584f4c0dfdb374600ab9d74d063.png)
 
-![image-20220609230958725](https://tva1.sinaimg.cn/large/e6c9d24ely1h32e979xj4j218w05g75x.jpg)
-
-7) 再次把 myscript 作为一个命令键入，然后按下回车键，命令的响应是什么？
-
-![image-20220609231312960](https://tva1.sinaimg.cn/large/e6c9d24ely1h32eckdtinj212402wjs1.jpg)
-
-
-
-**步骤18：**删除在本实验中创建的文件和目录
+**步骤18**：删除在本实验中创建的文件和目录
 删除在本实验过程中在你的主目录中创建的所有文件和目录
 
 
-
-**步骤19：**关闭终端窗口，注销。
+**步骤19**：关闭终端窗口，注销。

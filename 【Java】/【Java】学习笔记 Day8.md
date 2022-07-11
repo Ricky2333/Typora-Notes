@@ -12,21 +12,40 @@
 
 ### 1. Java 键盘输入
 
-
-
-🍉 **PS**：**复合赋值运算符** 在赋值时，会有 **隐式强制转换**。
-
 ```java
-byte b = 2;
-b = b + 2;    //编译错误，b + 2的结果为 int类型，无法赋值给 byte类型的变量b
-b += 2;       //编译通过，相当于 b = (byte)(b + 2)
+import java.util.Scanner   //导入该类的所在包
 
-short k = 3;
-k = k + 1;		//编译错误，k + 1的结果为 int类型，无法赋值给 short类型的变量k
-k++;				  //编译通过，相当于 k = (short)(k + 1)
+Scanner myScanner = new Scanner(System.in)  //创建该类对象
+
+String s = myScanner.next();           //接收键盘输入的 String类型值
+char c = myScanner.next().charAt(0);   //接收键盘输入的 char类型值
+int n1 = myScanner.nextInt();  				 //接收键盘输入的 int类型值
+double n2 = myScanner.nextDouble();    //接收键盘输入的 double类型值
 ```
 
 <br/>
+
+### 2. Java 程序控制结构
+
+#### 2.1 程序控制结构概览
+
+![image-20220706222856449](https://tva1.sinaimg.cn/large/e6c9d24ely1h3xksv1p9dj21hs0twgot.jpg)
+
+#### 2.2 单分支结构流程图
+
+![image-20220706223702260](https://tva1.sinaimg.cn/large/e6c9d24ely1h3xl18ghkcj217o0ncacj.jpg)
+
+
+
+#### 2.3 双分支结构流程图
+
+![image-20220706224047996](https://tva1.sinaimg.cn/large/e6c9d24ely1h3xl55gydej21cu0qujul.jpg)
+
+
+
+#### 2.4 多分支结构流程图
+
+![image-20220706224252059](https://tva1.sinaimg.cn/large/e6c9d24ely1h3xl7b5twwj20v60hc0uo.jpg)
 
 
 
@@ -36,9 +55,9 @@ k++;				  //编译通过，相当于 k = (short)(k + 1)
 
 学习 Java 的 **第 8 天**。⏰
 
-今天把上一章剩下的内容整理的差不多了，还差 「位运算原理」这一块知识点没整理。打算之后把 **位运算、三码（原反补）** 等知识单独开一篇文章，仔细梳理梳理，敬请期待。🧑🏻‍💻
+今天开始学习新的章节「**程序控制结构**」。感觉这部分 Java 的语法 和 C语言的语法 **高度重合**，网课听下来还算比较轻松，知识点主要就是了解三种基本的控制结构，能够 **画出分支结构、循环结构的流程图**。估计明天就能把这章的内容听完，后天可以把这章的笔记整理完。（目前进度 EP130）
 
-不多说了，今天整理还是花了很长时间的，耽误了不少看网课的时间，先润去看网课了 💨
+明天继续加油 ✊
 
 ---
 
