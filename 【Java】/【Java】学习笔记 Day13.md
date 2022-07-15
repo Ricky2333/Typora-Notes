@@ -153,7 +153,7 @@ System.out.println(b.age)；  //重点
 
 ![image-20220715094559393](https://tva1.sinaimg.cn/large/e6c9d24ely1h47dbr5feyj220o0tg466.jpg)
 
-[【视频讲解】思考题2的内存图绘制过程—B站（韩顺平老师）](https://www.bilibili.com/video/BV1fh411y7R8?p=201&vd_source=796196124611740a485335e1a4b12c0f)
+>  [【视频讲解】思考题2的内存图绘制过程—B站（韩顺平老师）](https://www.bilibili.com/video/BV1fh411y7R8?p=201&vd_source=796196124611740a485335e1a4b12c0f)
 
 <br/>
 

@@ -51,7 +51,7 @@ int[][] arr = {{1,2,3,4},{1,2,3,4,5},{1,2,3,4,5,6}}
 
 ![image-20220713225857814](https://tva1.sinaimg.cn/large/e6c9d24ely1h45p07zvmbj21ja0j8jww.jpg)
 
-[【视频讲解】二维数组的内存布局—B站（韩顺平老师）](https://www.bilibili.com/video/BV1fh411y7R8?p=177&vd_source=796196124611740a485335e1a4b12c0f)
+> [【视频讲解】二维数组的内存布局—B站（韩顺平老师）](https://www.bilibili.com/video/BV1fh411y7R8?p=177&vd_source=796196124611740a485335e1a4b12c0f)
 
 <br/>
 
