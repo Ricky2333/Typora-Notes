@@ -1,0 +1,138 @@
+{
+  "main": {
+    "id": "39c9f8f639a3e771",
+    "type": "split",
+    "children": [
+      {
+        "id": "87853720a6948767",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "【Java】/【Java】学习笔记 Day17.md",
+            "mode": "preview",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "005c91f0c71aa5c9",
+    "type": "split",
+    "children": [
+      {
+        "id": "6ca4f924658b51b6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0440c7381161d7a4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "769015f100bcc90a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cd7360d7a1ad4c32",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "572dc154dbe4daeb",
+    "type": "split",
+    "children": [
+      {
+        "id": "7b315eff105190bf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "304e6964fc3b5f4b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "【Java】/【Java】学习笔记 Day17.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "999319766dd406e5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "【Java】/【Java】学习笔记 Day17.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0d931bdc39f0ec5e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "2109b7333f3b755e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "【Java】/【Java】学习笔记 Day17.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "87853720a6948767",
+  "lastOpenFiles": [
+    "【Java】/【Java】Java关键字表和保留字表.md",
+    "【Java】/【Java】学习笔记 Day17.md",
+    "【Java】/【Java】学习笔记 Day06.md",
+    "【Java】/【Java】学习笔记 模版.md"
+  ]
+}
