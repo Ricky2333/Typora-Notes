@@ -14,7 +14,7 @@
 
 「**可变参数**」是指 Java 允许以 `[DataType]... [arg_name]` 的方式定义形参，之后可以向该方法中传入 **任意数量（> 0）** 的 `DataType` 类型参数。
 
-**实例**：`public void sum(int... arr)` 、`public void test(int,String,double... nums)` 
+**实例**：`public void sum(int... arr)` 、`public void test(String s,double... nums)` 
 
 <br/>
 
@@ -75,7 +75,7 @@ public class Test {
     public static void main(String[] args) {
       	int[] nums = {1,2,3,4,5};  //定义一个整数数组 nums
         Tool tool = new Tool();
-    		tool.getSum(nums);    //正确，结果输出该数组之和
+				tool.getSum(nums);    //正确，结果输出该数组之和
       	tool.getSum(10,nums); //错误，无法计算 10 与该数组之和
     }
 }
@@ -108,12 +108,14 @@ class Tool {
 ```java
 1. public int getSum(int... nums,double d){ ... }
 2. public int getSum(int n1,int n2,int... nums){ ... }
-3. public int getSum(int,int... nums,double... arr){ ... }
+3. public int getSum(int n1,int... nums,double... arr){ ... }
+4. public int getSum(String,int... nums){ ... }
 ```
 
 1. ❌ 可变参数必须定义在形参列表的最后。
 2. ✅ 该定义符合 Java 语法要求。
 3. ❌ 1 个形参列表最多只能有 1 个可变参数。
+4. ❌  `String` 类型后未指定参数名。
 
 <br/>
 
